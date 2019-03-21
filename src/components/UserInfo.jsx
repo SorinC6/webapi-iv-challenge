@@ -4,7 +4,7 @@ import axios from 'axios';
 class UserInfo extends React.Component {
 	state = {
 		userMesseges: [],
-		currentUser: ''
+		currentUser: []
 	};
 
 	componentDidMount() {
@@ -23,12 +23,14 @@ class UserInfo extends React.Component {
 	}
 
 	render() {
-		const current = this.state.currentUser[0];
+		const current = this.state.currentUser[1];
+
 		//debugger;
 		console.log(current);
 		return (
 			<div>
 				<p>User Info component</p>
+	>
 				{this.state.userMesseges.map((message) => {
 					return <p key={message.id}>{message.text}</p>;
 				})}
